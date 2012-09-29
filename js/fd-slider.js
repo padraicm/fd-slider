@@ -794,11 +794,10 @@ var fdSlider = (function() {
 
                         // Try catch for IE's benefit
                         try {
-                                while(obj.offsetParent) {
+                                do {
                                         curleft += obj.offsetLeft;
                                         curtop  += obj.offsetTop;
-                                        obj      = obj.offsetParent;
-                                }
+                                } while(obj = obj.offsetParent)
                         } catch(err) {}
                         x = curleft;
                         y = curtop;
